@@ -1,5 +1,6 @@
 package co.com.jdti.springbootweb.app.controllers;
 
+import co.com.jdti.springbootweb.app.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,4 +16,14 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/profile")
+    public String getProfile(Model model) {
+        User user = new User();
+        user.setName("fulanito");
+        user.setSurname("de tal");
+        model.addAttribute("user", user);
+        model.addAttribute("title", "Welcome!!");
+        model.addAttribute("subTitle", "Welcome " + user.getName());
+        return "profile";
+    }
 }

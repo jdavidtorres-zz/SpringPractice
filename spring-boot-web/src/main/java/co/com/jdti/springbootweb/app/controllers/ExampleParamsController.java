@@ -11,13 +11,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ExampleParamsController {
 
     @GetMapping("/")
-    public String as() {
+    public String sendParam() {
         return "params/index";
     }
 
     @GetMapping("/string")
     public String param(@RequestParam(required = false, defaultValue = "empty") String text, Model model) {
         model.addAttribute("result", "The text sent is: " + text);
+        return "params/see";
+    }
+
+    @GetMapping("/mix-param")
+    public String param(@RequestParam(required = false, defaultValue = "empty") String text, @RequestParam int num, Model model) {
+        model.addAttribute("result", "The text sent is: '" + text + "' and the number is: '" + num + "'");
         return "params/see";
     }
 }

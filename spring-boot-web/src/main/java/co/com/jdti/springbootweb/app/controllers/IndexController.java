@@ -15,20 +15,20 @@ import java.util.List;
 @RequestMapping("/app")
 public class IndexController {
 
-    private final String titleConstant = "title";
+    private static final String TITLE_CONSTANT = "title";
 
-    @Value("${text.indexcontroller.index.title}")
+    @Value("${text.index-controller.index.title}")
     private String indexText;
 
-    @Value("${text.indexcontroller.profile.title}")
+    @Value("${text.index-controller.profile.title}")
     private String profileText;
 
-    @Value("${text.indexcontroller.list.title}")
+    @Value("${text.index-controller.list.title}")
     private String listText;
 
     @GetMapping({"/index", "/", "", "/home"})
     public String index(Model model) {
-        model.addAttribute(titleConstant, indexText);
+        model.addAttribute(TITLE_CONSTANT, indexText);
         return "index";
     }
 
@@ -39,13 +39,13 @@ public class IndexController {
         user.setSurname("de tal");
         user.setEmail("fulano@mail.com");
         model.addAttribute("user", user);
-        model.addAttribute(titleConstant, "Welcome!!");
+        model.addAttribute(TITLE_CONSTANT, "Welcome!!");
         return "profile";
     }
 
     @GetMapping("/list")
     public String toList(Model model) {
-        model.addAttribute(titleConstant, listText);
+        model.addAttribute(TITLE_CONSTANT, listText);
         return "list";
     }
 

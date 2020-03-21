@@ -5,15 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title th:text="${title}">Insert title</title>
+    <title>Send params from request</title>
 </head>
 <body>
-<h1 th:text="${subTitle}"></h1>
-
-<span th:text="${user.name}"></span>
-<span th:text="${user.surname}"></span>
-<br>
-<span th:if="${user.email}" th:text="${user.email}"></span>
-<span th:if="${user.email == null}">El usuario no tiene correo</span>
+<h1 th:text="${title}">Insert text</h1>
 </body>
 </html>

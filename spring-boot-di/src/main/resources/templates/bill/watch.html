@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title th:text="${title}">Hello Spring</title>
+</head>
+
+<body>
+<h1 th:text="${title}">Hello Spring</h1>
+<br>
+<h3 th:text="${bill.description}"></h3>
+<br>
+<div><span th:text="${bill.client.name}"></span></div>
+<h4>Details</h4>
+<table>
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Value</th>
+        <th>Quantity</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item: ${bill.items}">
+        <td th:text="${item.product.name}"></td>
+        <td th:text="${item.product.value}"></td>
+        <td th:text="${item.quantity}"></td>
+        <td th:text="${item.calcValue()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>

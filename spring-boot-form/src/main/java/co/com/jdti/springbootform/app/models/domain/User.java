@@ -4,13 +4,13 @@ import javax.validation.constraints.NotEmpty;
 
 public class User {
 
-    @NotEmpty(message = "can´t be empty")
+    @NotEmpty(message = "Can´t be empty")
     private String username;
 
-    @NotEmpty(message = "can´t be empty")
+    @NotEmpty(message = "Can´t be empty")
     private String password;
 
-    @NotEmpty(message = "can´t be empty")
+    @NotEmpty(message = "Can´t be empty")
     private String email;
 
     public User() {

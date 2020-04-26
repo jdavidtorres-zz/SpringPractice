@@ -1,8 +1,11 @@
 package co.com.jdti.springbootform.app.models.domain;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 public class User {
+
+    private String id;
 
     @NotEmpty(message = "Can´t be empty")
     private String name;
@@ -16,6 +19,7 @@ public class User {
     @NotEmpty(message = "Can´t be empty")
     private String password;
 
+    @Email
     @NotEmpty(message = "Can´t be empty")
     private String email;
 
@@ -28,6 +32,14 @@ public class User {
         this.username = username;
         this.password = password;
         this.email = email;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUsername() {

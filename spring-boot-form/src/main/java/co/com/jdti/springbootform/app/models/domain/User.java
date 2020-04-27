@@ -2,6 +2,7 @@ package co.com.jdti.springbootform.app.models.domain;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 public class User {
 
@@ -13,6 +14,7 @@ public class User {
     @NotEmpty(message = "Can´t be empty")
     private String lastName;
 
+    @Size(min = 3, max = 8)
     @NotEmpty(message = "Can´t be empty")
     private String username;
 

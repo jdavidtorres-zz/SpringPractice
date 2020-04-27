@@ -30,9 +30,10 @@ public class FormController {
     @PostMapping("/form")
     public String sendForm(@Valid @ModelAttribute("user") User user, BindingResult result, Model model, SessionStatus status) {
         if (result.hasErrors()) {
+            model.addAttribute("title", "Form");
             return "form";
         }
-        model.addAttribute("title", "Result!!");
+        model.addAttribute("title", "Result");
         model.addAttribute("user", user);
         status.setComplete();
         return "result";

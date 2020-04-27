@@ -8,21 +8,21 @@ public class User {
 
     private String id;
 
-    @NotEmpty(message = "Can´t be empty")
+    @NotEmpty
     private String name;
 
-    @NotEmpty(message = "Can´t be empty")
+    @NotEmpty
     private String lastName;
 
     @Size(min = 3, max = 8)
-    @NotEmpty(message = "Can´t be empty")
+    @NotEmpty
     private String username;
 
-    @NotEmpty(message = "Can´t be empty")
+    @NotEmpty
     private String password;
 
     @Email
-    @NotEmpty(message = "Can´t be empty")
+    @NotEmpty
     private String email;
 
     public User() {

@@ -15,7 +15,6 @@ public class User {
     private String lastName;
 
     @Size(min = 3, max = 8)
-    @NotEmpty
     private String username;
 
     @NotEmpty

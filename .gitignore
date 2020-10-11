@@ -3,8 +3,13 @@ target/
 bin/
 build/
 !.mvn/wrapper/maven-wrapper.jar
+!gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+.gradle
+gradle/
+gradlew
+gradlew.bat
 
 ### STS ###
 .apt_generated

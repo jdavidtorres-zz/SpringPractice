@@ -2,9 +2,10 @@ HELP.md
 target/
 bin/
 build/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
+.gradle
+gradle/
+gradlew
+gradlew.bat
 
 ### STS ###
 .apt_generated

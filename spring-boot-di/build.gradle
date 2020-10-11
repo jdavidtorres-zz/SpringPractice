@@ -1,0 +1,24 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.10.RELEASE'
+  	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+    id 'application'
+    id 'eclipse'
+    id 'idea'
+}
+
+group = 'co.com.jdti'
+mainClassName = 'co.com.jdti.springbootdi.app.SpringBootDiApplication'
+version = '0.0.1'
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+}

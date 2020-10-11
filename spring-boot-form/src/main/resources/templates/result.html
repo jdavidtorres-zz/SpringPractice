@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${title}">Document</title>
+</head>
+<body>
+    <div class="alert alert-success">
+        <span th:text="${timeElapsed}"></span>
+    </div>
+    <h3 th:text="${title}"></h3>
+    <ul>
+        <li th:text="${user.id}"></li>
+        <li th:text="${user.name}"></li>
+        <li th:text="${user.lastName}"></li>
+        <li th:text="${user.username}"></li>
+        <li th:text="${user.email}"></li>
+        <li th:text="${#dates.format(user.birthDate,'dd/MM/yyyy')}"></li>
+        <li th:text="${user.country}"></li>
+    </ul>
+</body>
+</html>

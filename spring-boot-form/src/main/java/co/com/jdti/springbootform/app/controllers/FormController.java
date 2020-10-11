@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
 import javax.validation.Valid;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 @SessionAttributes("user")
@@ -24,6 +26,11 @@ public class FormController {
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.addValidators(validator);
+    }
+
+    @ModelAttribute("countries")
+    public List<String> countries() {
+        return Arrays.asList("Spain", "Colombia", "Mexico", "Chile", "Argentina");
     }
 
     @GetMapping("/form")

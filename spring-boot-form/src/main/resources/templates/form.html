@@ -8,8 +8,21 @@
     <title th:text="${title}">Document</title>
 </head>
 <body>
+    <div class="alert alert-success">
+        <span th:text="${timeElapsed}"></span>
+    </div>
     <h3 th:text="${title}"></h3>
     <form th:action="@{/form}" th:object="${user}" method="post">
+        <div>
+            <label for="country">Country</label>
+            <div>
+                <select id="country" th:field="*{country}">
+                    <option value="">--select--</option>
+                    <option th:each="country: ${countries}" th:text="${country}" th:value="${country}"></option>
+                </select>
+            </div>
+            <div th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></div>
+        </div>
         <div>
             <label for="name">Name</label>
             <div>
@@ -44,6 +57,14 @@
                 <input id="email" type="text" th:field="*{email}">
             </div>
             <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        </div>
+
+        <div>
+            <label for="birthDate">Birth Date</label>
+            <div>
+                <input id="birthDate" type="date" th:field="*{birthDate}" placeholder="yyyy-MM-dd">
+            </div>
+            <div th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"></div>
         </div>
         <div>
             <div>

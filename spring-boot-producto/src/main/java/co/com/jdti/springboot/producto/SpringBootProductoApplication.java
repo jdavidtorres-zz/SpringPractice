@@ -1,4 +1,4 @@
-package co.com.jdti.springbootproducto;
+package co.com.jdti.springboot.producto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
